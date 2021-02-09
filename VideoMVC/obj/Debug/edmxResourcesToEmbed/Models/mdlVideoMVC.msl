@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbVideoMVCModelStoreContainer" CdmEntityContainer="dbVideoMVCEntities">
+    <EntitySetMapping Name="tblCliente">
+      <EntityTypeMapping TypeName="dbVideoMVCModel.tblCliente">
+        <MappingFragment StoreEntitySet="tblCliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombreCliente" ColumnName="nombreCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContrato">
+      <EntityTypeMapping TypeName="dbVideoMVCModel.tblContrato">
+        <MappingFragment StoreEntitySet="tblContrato">
+          <ScalarProperty Name="idContrato" ColumnName="idContrato" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="montoContrato" ColumnName="montoContrato" />
+          <ScalarProperty Name="fechaContrato" ColumnName="fechaContrato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BuscarContrato" FunctionName="dbVideoMVCModel.Store.BuscarContrato">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbVideoMVCModel.BuscarContrato_Result">
+          <ScalarProperty Name="idContrato" ColumnName="idContrato" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="montoContrato" ColumnName="montoContrato" />
+          <ScalarProperty Name="fechaContrato" ColumnName="fechaContrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BuscarDato" FunctionName="dbVideoMVCModel.Store.BuscarContrato" />
+    <FunctionImportMapping FunctionImportName="Buscar2" FunctionName="dbVideoMVCModel.Store.Buscar2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbVideoMVCModel.Buscar2_Result">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="montoContrato" ColumnName="montoContrato" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BuscarCliente" FunctionName="dbVideoMVCModel.Store.BuscarCliente" />
+    <FunctionImportMapping FunctionImportName="BuscarMonto" FunctionName="dbVideoMVCModel.Store.BuscarMonto" />
+  </EntityContainerMapping>
+</Mapping>

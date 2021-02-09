@@ -1,0 +1,60 @@
+﻿@model IEnumerable<VideoMVC.Models.tblContrato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Contratos Registrados</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+@using (Html.BeginForm("Index", "Contratos", FormMethod.Post))
+{
+    <label>Desde:&nbsp;</label><input type="date" name="From"  />
+    <label>Hasta:&nbsp;</label><input type="date" name="To"  />
+    <input type="submit" value="Buscar" />
+}
+<p></p>
+<p>
+    @Html.ActionLink("Mostrar todos", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Cliente
+        </th>
+        <th>
+            Monto
+        </th>
+        <th>
+            Fecha
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblCliente.nombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.montoContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaContrato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaContrato)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idContrato }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.idContrato }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idContrato })
+                </td>*@
+        </tr>
+    }
+
+</table>
